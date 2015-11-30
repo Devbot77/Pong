@@ -106,6 +106,8 @@ namespace PingPong
                 speed_top = 4;
                 points = 0;
                 points_lbl.Text = "0";
+                level = 1;
+                levelCounter.Text = level.ToString();
                 timer1.Enabled = true;
                 gameover_lbl.Visible = false;
                 playground.BackColor = Color.White;
@@ -117,12 +119,12 @@ namespace PingPong
             {
                 ball.Top = 50;
                 ball.Left = 50;
-                speed_left = 5;
-                speed_top = 5;
-                points = 0;
-                points_lbl.Text = "0";
                 level += 1;
                 levelCounter.Text = level.ToString();
+                speed_left = level + 4;
+                speed_top = level + 4;
+                points = 0;
+                points_lbl.Text = "0";             
                 timer1.Enabled = true;
                 win_lbl.Visible = false;
                 playground.BackColor = Color.White;
