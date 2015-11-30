@@ -16,7 +16,7 @@ namespace PingPong
         public int speed_left = 4;          //speed of ball
         public int speed_top = 4;
         public int points = 0;           //scored points
-
+        public int level = 1;
       
 
         public Form1()
@@ -35,6 +35,10 @@ namespace PingPong
             gameover_lbl.Left = (playground.Width/2) - (gameover_lbl.Width/2);      //Position to center
             gameover_lbl.Top = (playground.Height / 2) - (gameover_lbl.Height / 2);
             gameover_lbl.Visible = false;           //Hide
+
+            win_lbl.Left = (playground.Width / 2) - (win_lbl.Width / 2);
+            win_lbl.Top = (playground.Height / 2) - (win_lbl.Height / 2);
+            win_lbl.Visible = false;
 
           
             
@@ -78,6 +82,11 @@ namespace PingPong
                 timer1.Enabled = false;         //Bell is out -> Stop the game
                 gameover_lbl.Visible = true;
             }
+            if (points == 10)
+            {
+                timer1.Enabled = false;
+                win_lbl.Visible = true;
+            }
                     
 
            
@@ -101,6 +110,22 @@ namespace PingPong
                 gameover_lbl.Visible = false;
                 playground.BackColor = Color.White;
 
+
+            }
+
+            if (e.KeyCode == Keys.F7)
+            {
+                ball.Top = 50;
+                ball.Left = 50;
+                speed_left = 5;
+                speed_top = 5;
+                points = 0;
+                points_lbl.Text = "0";
+                level += 1;
+                levelCounter.Text = level.ToString();
+                timer1.Enabled = true;
+                win_lbl.Visible = false;
+                playground.BackColor = Color.White;
 
             }
         }

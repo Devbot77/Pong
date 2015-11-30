@@ -37,6 +37,9 @@
             this.ball = new System.Windows.Forms.PictureBox();
             this.racket = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.win_lbl = new System.Windows.Forms.Label();
+            this.level_lbl = new System.Windows.Forms.Label();
+            this.levelCounter = new System.Windows.Forms.Label();
             this.playground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racket)).BeginInit();
@@ -44,6 +47,9 @@
             // 
             // playground
             // 
+            this.playground.Controls.Add(this.levelCounter);
+            this.playground.Controls.Add(this.level_lbl);
+            this.playground.Controls.Add(this.win_lbl);
             this.playground.Controls.Add(this.gameover_lbl);
             this.playground.Controls.Add(this.points_lbl);
             this.playground.Controls.Add(this.score_lbl);
@@ -115,6 +121,43 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // win_lbl
+            // 
+            this.win_lbl.AutoSize = true;
+            this.win_lbl.BackColor = System.Drawing.Color.PaleGreen;
+            this.win_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.win_lbl.ForeColor = System.Drawing.Color.Indigo;
+            this.win_lbl.Location = new System.Drawing.Point(85, 156);
+            this.win_lbl.Name = "win_lbl";
+            this.win_lbl.Size = new System.Drawing.Size(231, 185);
+            this.win_lbl.TabIndex = 5;
+            this.win_lbl.Text = "Success!\r\n\r\nF7 - Next Level\r\nF1 - Restart\r\nEsc - Exit";
+            this.win_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // level_lbl
+            // 
+            this.level_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.level_lbl.AutoSize = true;
+            this.level_lbl.Font = new System.Drawing.Font("Franklin Gothic Medium", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.level_lbl.ForeColor = System.Drawing.Color.Indigo;
+            this.level_lbl.Location = new System.Drawing.Point(418, 9);
+            this.level_lbl.Name = "level_lbl";
+            this.level_lbl.Size = new System.Drawing.Size(97, 37);
+            this.level_lbl.TabIndex = 6;
+            this.level_lbl.Text = "Level:";
+            // 
+            // levelCounter
+            // 
+            this.levelCounter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.levelCounter.AutoSize = true;
+            this.levelCounter.Font = new System.Drawing.Font("Franklin Gothic Medium", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.levelCounter.ForeColor = System.Drawing.Color.Indigo;
+            this.levelCounter.Location = new System.Drawing.Point(527, 9);
+            this.levelCounter.Name = "levelCounter";
+            this.levelCounter.Size = new System.Drawing.Size(36, 37);
+            this.levelCounter.TabIndex = 7;
+            this.levelCounter.Text = "1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +184,9 @@
         private System.Windows.Forms.Label points_lbl;
         private System.Windows.Forms.Label score_lbl;
         private System.Windows.Forms.Label gameover_lbl;
+        private System.Windows.Forms.Label win_lbl;
+        private System.Windows.Forms.Label levelCounter;
+        private System.Windows.Forms.Label level_lbl;
     }
 }
 
